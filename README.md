@@ -2,6 +2,8 @@
 
 由于essentia在windows有相当大的局限性，所以目前只能在wsl上运行。
 
+效果演示： 【跟着音乐跳舞的gif图】 https://www.bilibili.com/video/BV1tFcWzeEkv
+
 ## 安装ubuntu24.04.1-lts
 打开微软商店直接下载安装即可。
 
@@ -17,13 +19,12 @@ wsl安装完成后，会自动出现在windows资源管理器左侧目录的Linu
 bash Anaconda3-2025.12-2-Linux-x86_64.sh
 ```
 
-
-
 ## 创建python环境
 
 ```shell
 conda create -n essentia_env python=3.11
 ```
+这样我们就创建了一个名称为`essentia_env`的环境，安装位置在`~/anaconda3/envs/essentia_env`
 
 ## 安装essentia
 ```bash
@@ -85,6 +86,12 @@ speaker-test -t wav -c 2
 
 ```
 
+## 配置PyCharm
+python虽然运行在wsl，但是window的PyCharm可以配置wsl的conda环境。
+打开PyCharm，点击右下角的`Add New Interpreter->On wsl->System Interpreter`, 找到我们第二步创建的`essentia_env`环境
+```python
+\\wsl.localhost\Ubuntu-24.04\home\tignioj\anaconda3\envs\essentia_env\bin\python3
+```
 
 
 ## 测试bpm检测代码
